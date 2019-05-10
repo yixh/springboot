@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sp.dao.UserMapper">
+
+	<select id="SelectUserById" parameterType="int" resultType="com.sp.entity.User">
+		select * from userinfo where id=#{id}
+	</select>
+
+	<insert id="InsertTest">
+		INSERT INTO tb_user (
+		user_name,
+		user_password,
+		birth,
+		sex,
+		email,
+		mobile,
+		create_date,
+		update_date,
+		description
+		)
+		VALUES
+		("admin","123456",
+		NOW(),
+		"M",
+		"admin@qq.com",
+		"13812345678",
+		NOW(),
+		NOW(),
+		"超级管理员"
+		);
+
+	</insert>
+	
+	
+	<!-- <insert id="InsertTest">
+		{call  procedure_insert()}
+	</insert> -->
+
+</mapper>
